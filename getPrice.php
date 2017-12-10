@@ -2,7 +2,7 @@
 
 /**
  * Project: BTC Price
- * File:    index.php
+ * File:    getPrice.php
  *
  *
  * @link http://www.25mordad.com
@@ -18,4 +18,5 @@
 	//print_r($obj[1]);
 	//query
 	$query="INSERT INTO `btcrate` (`id`, `date`, `time`, `currency`, `rate`) VALUES (NULL, '".date("Y-m-d")."', '".date("H:i")."', '".$obj[1]->code."', '".$obj[1]->rate."')";
-	
+	if (!mysqli_query($connection ,$query))
+		print("Error Insert!");
