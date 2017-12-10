@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Project: BTC Price
- * File:    getPrice.php
+ * Project: BTC Rate
+ * File:    getRate.php
  *
  *
  * @link http://www.25mordad.com
@@ -17,6 +17,10 @@
 	$obj = json_decode($json);
 	//print_r($obj[1]);
 	//query
-	$query="INSERT INTO `btcrate` (`id`, `date`, `time`, `currency`, `rate`) VALUES (NULL, '".date("Y-m-d")."', '".date("H:i")."', '".$obj[1]->code."', '".$obj[1]->rate."')";
-	if (!mysqli_query($connection ,$query))
+	$query="
+			INSERT INTO `btcrate` (`id`, `date`, `time`, `currency`, `rate`) VALUES 
+			(NULL, '".date("Y-m-d")."', '".date("H:i")."', '".$obj[1]->code."', '".$obj[1]->rate."'), 
+			(NULL, '".date("Y-m-d")."', '".date("H:i")."', '".$obj[2]->code."', '".$obj[2]->rate."')
+					";
+	if (!$conn->query($query))
 		print("Error Insert!");

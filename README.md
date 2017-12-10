@@ -1,2 +1,2 @@
 # bitdev
-Bitcoin Price
+Bitcoin Rate/min
