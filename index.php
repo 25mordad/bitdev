@@ -1,2 +1,2 @@
 <?php
-echo "Hello test";
+echo "Hello test/1/2";
